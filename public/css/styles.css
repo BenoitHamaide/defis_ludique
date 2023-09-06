@@ -1,0 +1,38 @@
+body{
+    background: #292929;
+    width: 80vw;
+}
+h1, a{
+    color: orange;
+
+margin: 1rem;
+}
+a{
+    text-decoration: none;
+}
+h2, li, tr{
+    color: whitesmoke;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+.form-row, .crud, #product{
+    display: flex;
+    flex-direction: row;
+}
+label{
+    color: whitesmoke;
+    margin: 0.5rem;
+}
+button{
+background: green;
+border: 1px solid black;
+border-radius: 5px;
+margin: 1rem;
+}
+.liste{
+    background: rgba(245, 245, 245, 0.09);
+    border-radius: 5px;
+    padding: 1rem;
+}

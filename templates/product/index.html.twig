@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+
+    <h1>Défis Ludique</h1>
+
+    <form class="form" method="GET">
+        <div class="form-row">
+            <div class="rom">
+                <input type="text" class="form-control" name="search_name" placeholder="Nom">
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" name="search_reference" placeholder="Référence">
+            </div>
+            <div class="row">
+                <button type="submit" class="btn btn-primary">Rechercher</button>
+            </div>
+        </div>
+    </form>
+
+    <h2>Résultats de la recherche</h2>
+
+    <ul>
+        {% for product in products %}
+            <li>{{ product.nom }} (Référence: {{ product.reference }})</li>
+        {% endfor %}
+    </ul>
+<div class="liste">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Reference</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.nom }}</td>
+                <td>{{ product.reference }}</td>
+                <td>{{ product.description }}</td>
+                <td class="crud">
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}">voir le produit</a>
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}">modifier le produit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">pas de jeux trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <a href="{{ path('app_product_new') }}">Ajouté un jeu</a>
+{% endblock %}
