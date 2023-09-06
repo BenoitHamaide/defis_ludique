@@ -20,7 +20,6 @@ class ProductController extends AbstractController
         $name = $request->query->get('search_name');
         $reference = $request->query->get('search_reference');
 
-        // Utilisez les valeurs $name et $reference pour effectuer la recherche dans la base de données
         $products = $productRepository->findBySearchCriteria($name, $reference);
 
         return $this->render('product/index.html.twig', [
@@ -88,10 +87,9 @@ class ProductController extends AbstractController
     #[Route('/search', name: 'app_product_search', methods: ['GET'])]
     public function search(Request $request, ProductRepository $productRepository): Response
     {
-        $nom = $request->query->get('search_nom'); // Utilisez 'search_nom' pour le champ 'nom'
+        $nom = $request->query->get('search_nom');
         $reference = $request->query->get('search_reference');
     
-        // Utilisez les valeurs $nom et $reference pour effectuer la recherche dans la base de données
         $products = $productRepository->findBySearchCriteria($nom, $reference);
     
         return $this->render('product/search.html.twig', [

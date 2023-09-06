@@ -19,10 +19,10 @@ class ProductRepository extends ServiceEntityRepository
     /**
      * Recherche les produits en fonction des critères de nom et de référence.
      *
-     * @param string $nom      Le nom du produit à rechercher.
-     * @param string $reference La référence du produit à rechercher (peut être vide).
+     * @param string $nom     
+     * @param string $reference 
      *
-     * @return Product[] Un tableau d'objets Product correspondant aux critères de recherche.
+     * @return Product[] 
      */
     public function findBySearchCriteria($nom, $reference)
     {
