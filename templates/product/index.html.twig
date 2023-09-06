@@ -31,9 +31,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Nom</th>
-                <th>Reference</th>
                 <th>Description</th>
                 <th>actions</th>
             </tr>
@@ -41,9 +39,7 @@
         <tbody>
         {% for product in products %}
             <tr>
-                <td>{{ product.id }}</td>
                 <td>{{ product.nom }}</td>
-                <td>{{ product.reference }}</td>
                 <td>{{ product.description }}</td>
                 <td class="crud">
                     <a href="{{ path('app_product_show', {'id': product.id}) }}">voir le produit</a>

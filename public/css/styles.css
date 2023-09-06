@@ -31,6 +31,10 @@ border: 1px solid black;
 border-radius: 5px;
 margin: 1rem;
 }
+button:hover{
+    background: rgba(98, 205, 237, 0.8);
+    transition-duration: 0.5s;
+}
 .liste{
     background: rgba(245, 245, 245, 0.09);
     border-radius: 5px;
